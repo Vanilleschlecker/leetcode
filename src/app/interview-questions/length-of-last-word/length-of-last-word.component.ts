@@ -6,15 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./length-of-last-word.component.scss']
 })
 export class LengthOfLastWordComponent {
-  lengthOfLastWord = 0
-
-  constructor() {
-    this.lengthOfLastWord = this.lengthOfLastWords("   fly me   to   the moon  ")
-  }
-  lengthOfLastWords(s: string): number {
+  lengthOfLastWord(s: string): number {
     let wordArray = s.split(' ')
     wordArray = wordArray.filter((element) => element !== ' ' && element !== '')
-    console.log(wordArray)
     return wordArray[wordArray.length -1].length
   };
 }

@@ -1,4 +1,30 @@
-<mat-card (click)="this.navigationService.goToInterviewQuestion(interviewQuestionPath.LENGTH_OF_LAST_WORD_58)">
-  <mat-card-content>58. Length of Last Word</mat-card-content>
-</mat-card>
-<router-outlet></router-outlet>
+<div class="interview">
+  <h1>150 Interview Questions</h1>
+  <mat-grid-list cols="4">
+    <mat-grid-tile>
+      <mat-card (click)="this.navigationService.goToInterviewQuestion(interviewQuestionPath.LENGTH_OF_LAST_WORD_58)">
+        <mat-card-content>58. length of last word</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card (click)="this.navigationService.goToInterviewQuestion(interviewQuestionPath.LONGEST_COMMON_PREFIX_14)">
+        <mat-card-content>14 longest common prefix</mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-content>
+          <h2>TO BE DONE</h2>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-content>
+          <h2>TO BE DONE</h2>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <router-outlet></router-outlet>
+</div>

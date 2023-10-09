@@ -1,6 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {NavigationServiceService} from "../common/navigation-service.service";
 import {interviewQuestionPath} from "./interview-question-path";
+import {routePath} from "../common/route-path";
 
 @Component({
   selector: 'app-interview-questions',
@@ -10,4 +11,5 @@ import {interviewQuestionPath} from "./interview-question-path";
 export class InterviewQuestionsComponent {
   navigationService = inject(NavigationServiceService)
   protected readonly interviewQuestionPath = interviewQuestionPath;
+  protected readonly routePath = routePath;
 }

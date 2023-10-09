@@ -8,19 +8,25 @@ import { HomeComponent } from './home/home.component';
 import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
 import { LengthOfLastWordComponent } from './interview-questions/length-of-last-word/length-of-last-word.component';
+import {MatGridListModule} from "@angular/material/grid-list";
+import {MatIconModule} from "@angular/material/icon";
+import { LongestCommonPrefixComponent } from './interview-questions/longest-common-prefix/longest-common-prefix.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InterviewQuestionsComponent,
     HomeComponent,
-    LengthOfLastWordComponent
+    LengthOfLastWordComponent,
+    LongestCommonPrefixComponent
   ],
   imports: [
     AppRoutingModule,
     BrowserModule,
     MatCardModule,
-    RouterOutlet
+    RouterOutlet,
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
