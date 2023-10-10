@@ -11,6 +11,7 @@ import { LengthOfLastWordComponent } from './interview-questions/length-of-last-
 import {MatGridListModule} from "@angular/material/grid-list";
 import {MatIconModule} from "@angular/material/icon";
 import { LongestCommonPrefixComponent } from './interview-questions/longest-common-prefix/longest-common-prefix.component';
+import { BestTimeToBuyAndSellStocksComponent } from './interview-questions/best-time-to-buy-and-sell-stocks/best-time-to-buy-and-sell-stocks.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LongestCommonPrefixComponent } from './interview-questions/longest-comm
     InterviewQuestionsComponent,
     HomeComponent,
     LengthOfLastWordComponent,
-    LongestCommonPrefixComponent
+    LongestCommonPrefixComponent,
+    BestTimeToBuyAndSellStocksComponent
   ],
   imports: [
     AppRoutingModule,

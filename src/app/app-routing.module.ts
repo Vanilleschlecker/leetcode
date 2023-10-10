@@ -8,6 +8,9 @@ import {interviewQuestionPath} from "./interview-questions/interview-question-pa
 import {
   LongestCommonPrefixComponent
 } from "./interview-questions/longest-common-prefix/longest-common-prefix.component";
+import {
+  BestTimeToBuyAndSellStocksComponent
+} from "./interview-questions/best-time-to-buy-and-sell-stocks/best-time-to-buy-and-sell-stocks.component";
 
 
 const routes: Routes = [
@@ -27,6 +30,10 @@ const routes: Routes = [
       {
         component: LongestCommonPrefixComponent,
         path: interviewQuestionPath.LONGEST_COMMON_PREFIX_14
+      },
+      {
+        component: BestTimeToBuyAndSellStocksComponent,
+        path: interviewQuestionPath.BEST_TIME_TO_BUY_AND_SELL_STOCKS_121
       }
     ]
   },

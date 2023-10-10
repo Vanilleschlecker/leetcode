@@ -10,5 +10,5 @@ export class LengthOfLastWordComponent {
     let wordArray = s.split(' ')
     wordArray = wordArray.filter((element) => element !== ' ' && element !== '')
     return wordArray[wordArray.length -1].length
-  };
+  }
 }
