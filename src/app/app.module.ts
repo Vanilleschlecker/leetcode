@@ -14,6 +14,7 @@ import { LongestCommonPrefixComponent } from './interview-questions/longest-comm
 import { BestTimeToBuyAndSellStocksComponent } from './interview-questions/best-time-to-buy-and-sell-stocks/best-time-to-buy-and-sell-stocks.component';
 import { DailyQuestionsComponent } from './daily-questions/daily-questions.component';
 import { MinimumOperationsToMakeArrayContiniousComponent } from './daily-questions/minimum-operations-to-make-array-continious/minimum-operations-to-make-array-continious.component';
+import { RomanToIntegerComponent } from './interview-questions/roman-to-integer/roman-to-integer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MinimumOperationsToMakeArrayContiniousComponent } from './daily-questio
     LongestCommonPrefixComponent,
     BestTimeToBuyAndSellStocksComponent,
     DailyQuestionsComponent,
-    MinimumOperationsToMakeArrayContiniousComponent
+    MinimumOperationsToMakeArrayContiniousComponent,
+    RomanToIntegerComponent
   ],
   imports: [
     AppRoutingModule,

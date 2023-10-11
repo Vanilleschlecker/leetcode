@@ -16,6 +16,7 @@ import {
   MinimumOperationsToMakeArrayContiniousComponent
 } from "./daily-questions/minimum-operations-to-make-array-continious/minimum-operations-to-make-array-continious.component";
 import {dailyQuestionsPath} from "./daily-questions/daily-questions-path";
+import {RomanToIntegerComponent} from "./interview-questions/roman-to-integer/roman-to-integer.component";
 
 
 const routes: Routes = [
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         component: BestTimeToBuyAndSellStocksComponent,
         path: interviewQuestionsPath.BEST_TIME_TO_BUY_AND_SELL_STOCKS_121
+      },
+      {
+        component: RomanToIntegerComponent,
+        path: interviewQuestionsPath.ROMAN_TO_INTEGER_13
       }
     ]
   },
