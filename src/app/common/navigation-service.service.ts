@@ -1,7 +1,8 @@
 import {inject, Injectable} from '@angular/core';
-import {interviewQuestionPath} from "../interview-questions/interview-question-path";
+import {interviewQuestionsPath} from "../interview-questions/interview-questions-path";
 import {Router} from "@angular/router";
 import {routePath} from "./route-path";
+import {dailyQuestionsPath} from "../daily-questions/daily-questions-path";
 
 @Injectable({
   providedIn: 'root'
@@ -14,9 +15,16 @@ export class NavigationServiceService {
     this.router.navigate([route])
   }
 
-  goToInterviewQuestion(url: interviewQuestionPath) {
+  goToInterviewQuestion(url: interviewQuestionsPath) {
     this.router.navigate([
       routePath.INTERVIEW_QUESTIONS,
+      url
+    ])
+  }
+
+  goToDailyQuestion(url: dailyQuestionsPath) {
+    this.router.navigate([
+      routePath.DAILY_QUESTIONS,
       url
     ])
   }

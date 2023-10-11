@@ -1,23 +1,15 @@
-<div class="home">
-  <h1>Leetcode Problems</h1>
+<div class="daily">
+  <h1>Daily Questions</h1>
   <mat-grid-list cols="4">
     <mat-grid-tile>
-      <mat-card (click)="this.navigationService.navigateTo(routePath.INTERVIEW_QUESTIONS)">
-        <mat-card-content>
-          <h2>150 Interview Questions</h2>
-          <div class="mat-card-icon">
-            <mat-icon>mic</mat-icon>
-          </div>
-        </mat-card-content>
+      <mat-card (click)="this.navigationService.goToDailyQuestion(dailyQuestionsPath.MINIMUM_OPERATIONS_TO_MAKE_ARRAY_CONTINUOUS_2009)">
+        <mat-card-content>2009. minimum operations to make array continuous (unfinished)</mat-card-content>
       </mat-card>
     </mat-grid-tile>
     <mat-grid-tile>
-      <mat-card (click)="this.navigationService.navigateTo(routePath.DAILY_QUESTIONS)">
+      <mat-card>
         <mat-card-content>
-          <h2>Daily Questions</h2>
-          <div class="mat-card-icon">
-            <mat-icon>calendar_today</mat-icon>
-          </div>
+          <h2>TO BE DONE</h2>
         </mat-card-content>
       </mat-card>
     </mat-grid-tile>

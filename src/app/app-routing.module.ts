@@ -4,13 +4,18 @@ import {HomeComponent} from "./home/home.component";
 import {InterviewQuestionsComponent} from "./interview-questions/interview-questions.component";
 import {routePath} from "./common/route-path";
 import {LengthOfLastWordComponent} from "./interview-questions/length-of-last-word/length-of-last-word.component";
-import {interviewQuestionPath} from "./interview-questions/interview-question-path";
+import {interviewQuestionsPath} from "./interview-questions/interview-questions-path";
 import {
   LongestCommonPrefixComponent
 } from "./interview-questions/longest-common-prefix/longest-common-prefix.component";
 import {
   BestTimeToBuyAndSellStocksComponent
 } from "./interview-questions/best-time-to-buy-and-sell-stocks/best-time-to-buy-and-sell-stocks.component";
+import {DailyQuestionsComponent} from "./daily-questions/daily-questions.component";
+import {
+  MinimumOperationsToMakeArrayContiniousComponent
+} from "./daily-questions/minimum-operations-to-make-array-continious/minimum-operations-to-make-array-continious.component";
+import {dailyQuestionsPath} from "./daily-questions/daily-questions-path";
 
 
 const routes: Routes = [
@@ -25,18 +30,28 @@ const routes: Routes = [
     children: [
       {
         component: LengthOfLastWordComponent,
-        path: interviewQuestionPath.LENGTH_OF_LAST_WORD_58
+        path: interviewQuestionsPath.LENGTH_OF_LAST_WORD_58
       },
       {
         component: LongestCommonPrefixComponent,
-        path: interviewQuestionPath.LONGEST_COMMON_PREFIX_14
+        path: interviewQuestionsPath.LONGEST_COMMON_PREFIX_14
       },
       {
         component: BestTimeToBuyAndSellStocksComponent,
-        path: interviewQuestionPath.BEST_TIME_TO_BUY_AND_SELL_STOCKS_121
+        path: interviewQuestionsPath.BEST_TIME_TO_BUY_AND_SELL_STOCKS_121
       }
     ]
   },
+  {
+    path: routePath.DAILY_QUESTIONS,
+    component: DailyQuestionsComponent,
+    children: [
+      {
+        component: MinimumOperationsToMakeArrayContiniousComponent,
+        path: dailyQuestionsPath.MINIMUM_OPERATIONS_TO_MAKE_ARRAY_CONTINUOUS_2009
+      }
+    ]
+  }
 ]
 
 @NgModule({

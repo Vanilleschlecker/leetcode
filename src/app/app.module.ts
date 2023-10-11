@@ -12,6 +12,8 @@ import {MatGridListModule} from "@angular/material/grid-list";
 import {MatIconModule} from "@angular/material/icon";
 import { LongestCommonPrefixComponent } from './interview-questions/longest-common-prefix/longest-common-prefix.component';
 import { BestTimeToBuyAndSellStocksComponent } from './interview-questions/best-time-to-buy-and-sell-stocks/best-time-to-buy-and-sell-stocks.component';
+import { DailyQuestionsComponent } from './daily-questions/daily-questions.component';
+import { MinimumOperationsToMakeArrayContiniousComponent } from './daily-questions/minimum-operations-to-make-array-continious/minimum-operations-to-make-array-continious.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { BestTimeToBuyAndSellStocksComponent } from './interview-questions/best-
     HomeComponent,
     LengthOfLastWordComponent,
     LongestCommonPrefixComponent,
-    BestTimeToBuyAndSellStocksComponent
+    BestTimeToBuyAndSellStocksComponent,
+    DailyQuestionsComponent,
+    MinimumOperationsToMakeArrayContiniousComponent
   ],
   imports: [
     AppRoutingModule,
