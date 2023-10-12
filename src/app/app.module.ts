@@ -15,6 +15,7 @@ import { BestTimeToBuyAndSellStocksComponent } from './interview-questions/best-
 import { DailyQuestionsComponent } from './daily-questions/daily-questions.component';
 import { MinimumOperationsToMakeArrayContiniousComponent } from './daily-questions/minimum-operations-to-make-array-continious/minimum-operations-to-make-array-continious.component';
 import { RomanToIntegerComponent } from './interview-questions/roman-to-integer/roman-to-integer.component';
+import { RansomNoteComponent } from './interview-questions/ransom-note/ransom-note.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { RomanToIntegerComponent } from './interview-questions/roman-to-integer/
     BestTimeToBuyAndSellStocksComponent,
     DailyQuestionsComponent,
     MinimumOperationsToMakeArrayContiniousComponent,
-    RomanToIntegerComponent
+    RomanToIntegerComponent,
+    RansomNoteComponent
   ],
   imports: [
     AppRoutingModule,

@@ -17,6 +17,7 @@ import {
 } from "./daily-questions/minimum-operations-to-make-array-continious/minimum-operations-to-make-array-continious.component";
 import {dailyQuestionsPath} from "./daily-questions/daily-questions-path";
 import {RomanToIntegerComponent} from "./interview-questions/roman-to-integer/roman-to-integer.component";
+import {RansomNoteComponent} from "./interview-questions/ransom-note/ransom-note.component";
 
 
 const routes: Routes = [
@@ -44,6 +45,10 @@ const routes: Routes = [
       {
         component: RomanToIntegerComponent,
         path: interviewQuestionsPath.ROMAN_TO_INTEGER_13
+      },
+      {
+        component: RansomNoteComponent,
+        path: interviewQuestionsPath.RANSOM_NOTE_383
       }
     ]
   },
