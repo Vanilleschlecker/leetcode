@@ -109,6 +109,10 @@ $portfolio-theme: mat.define-light-theme((
   font-family: 'Roboto', sans-serif;
 }
 
+pre code * {
+  font-family: 'Fira Code', sans-serif;
+}
+
 h1 {
   color: white;
   font-size: 4rem;
@@ -117,3 +121,4 @@ h1 {
 }
 
 @import "styles/mat-card";
+@import 'node_modules/highlight.js/styles/shades-of-purple.css';

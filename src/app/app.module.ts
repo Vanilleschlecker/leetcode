@@ -17,6 +17,12 @@ import { MinimumOperationsToMakeArrayContiniousComponent } from './daily-questio
 import { RomanToIntegerComponent } from './interview-questions/roman-to-integer/roman-to-integer.component';
 import { RansomNoteComponent } from './interview-questions/ransom-note/ransom-note.component';
 
+import {
+  HighlightOptions,
+  HIGHLIGHT_OPTIONS, Highlight,
+} from 'ngx-highlightjs';
+import { CodeBlockComponent } from './common/code-block/code-block.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +34,8 @@ import { RansomNoteComponent } from './interview-questions/ransom-note/ransom-no
     DailyQuestionsComponent,
     MinimumOperationsToMakeArrayContiniousComponent,
     RomanToIntegerComponent,
-    RansomNoteComponent
+    RansomNoteComponent,
+    CodeBlockComponent
   ],
   imports: [
     AppRoutingModule,
@@ -36,9 +43,23 @@ import { RansomNoteComponent } from './interview-questions/ransom-note/ransom-no
     MatCardModule,
     RouterOutlet,
     MatGridListModule,
-    MatIconModule
+    MatIconModule,
+    Highlight
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HIGHLIGHT_OPTIONS,
+      useValue: <HighlightOptions>{
+        lineNumbers: true,
+        coreLibraryLoader: () => import('highlight.js/lib/core'),
+        lineNumbersLoader: () => import('ngx-highlightjs/line-numbers'),
+        themePath: 'node_modules/highlight.js/styles/github.css',
+        languages: {
+          typescript: () => import('highlight.js/lib/languages/typescript')
+        },
+      },
+    },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
