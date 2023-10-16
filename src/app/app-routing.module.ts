@@ -18,6 +18,7 @@ import {
 import {dailyQuestionsPath} from "./daily-questions/daily-questions-path";
 import {RomanToIntegerComponent} from "./interview-questions/roman-to-integer/roman-to-integer.component";
 import {RansomNoteComponent} from "./interview-questions/ransom-note/ransom-note.component";
+import {PascalsTriangleComponent} from "./daily-questions/pascals-triangle/pascals-triangle.component";
 
 
 const routes: Routes = [
@@ -59,6 +60,10 @@ const routes: Routes = [
       {
         component: MinimumOperationsToMakeArrayContiniousComponent,
         path: dailyQuestionsPath.MINIMUM_OPERATIONS_TO_MAKE_ARRAY_CONTINUOUS_2009
+      },
+      {
+        component: PascalsTriangleComponent,
+        path: dailyQuestionsPath.PASCALS_TRIANGLE_119
       }
     ]
   }

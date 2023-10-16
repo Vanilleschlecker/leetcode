@@ -22,6 +22,7 @@ import {
   HIGHLIGHT_OPTIONS, Highlight,
 } from 'ngx-highlightjs';
 import { CodeBlockComponent } from './common/code-block/code-block.component';
+import { PascalsTriangleComponent } from './daily-questions/pascals-triangle/pascals-triangle.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CodeBlockComponent } from './common/code-block/code-block.component';
     MinimumOperationsToMakeArrayContiniousComponent,
     RomanToIntegerComponent,
     RansomNoteComponent,
-    CodeBlockComponent
+    CodeBlockComponent,
+    PascalsTriangleComponent
   ],
   imports: [
     AppRoutingModule,
