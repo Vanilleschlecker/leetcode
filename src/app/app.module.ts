@@ -55,7 +55,6 @@ import { PascalsTriangleComponent } from './daily-questions/pascals-triangle/pas
         lineNumbers: true,
         coreLibraryLoader: () => import('highlight.js/lib/core'),
         lineNumbersLoader: () => import('ngx-highlightjs/line-numbers'),
-        themePath: 'node_modules/highlight.js/styles/github.css',
         languages: {
           typescript: () => import('highlight.js/lib/languages/typescript')
         },

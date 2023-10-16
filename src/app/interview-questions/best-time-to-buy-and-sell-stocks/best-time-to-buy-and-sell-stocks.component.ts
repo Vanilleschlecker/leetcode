@@ -22,7 +22,6 @@ export class BestTimeToBuyAndSellStocksComponent {
 
         if(prices[i] - prices[buyIndex] > maxProfit) {
           sellIndex = i
-          console.log(sellIndex)
         }
 
         if(sellIndex>buyIndex) {

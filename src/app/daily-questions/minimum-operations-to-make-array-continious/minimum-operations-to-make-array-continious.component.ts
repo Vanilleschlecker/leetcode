@@ -41,8 +41,6 @@ export class MinimumOperationsToMakeArrayContiniousComponent {
     checkSmallest = smallestSaved
     checkBiggest = biggestSaved
 
-    console.log(smallestSaved,biggestSaved)
-
     while (checkSmallest <= checkBiggest) {
       if(sorted.filter((v) => (v === checkSmallest)).length === 1) {
         checkSmallest++
@@ -113,9 +111,6 @@ export class MinimumOperationsToMakeArrayContiniousComponent {
       }).length > 0)) {
         checkSmallest = smallestSaved
       }
-
-      console.log(sorted)
-      console.log(operationsCount)
     }
     return operationsCount
   }
