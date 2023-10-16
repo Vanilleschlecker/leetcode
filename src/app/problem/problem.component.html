@@ -1,0 +1,7 @@
+<div class="problem">
+  <ng-container *ngIf="problem">
+    <h1>{{problem.title}}</h1>
+    <app-leetcode-link linkTitle="Link to Leetcode Problem" [link]="problem.link"></app-leetcode-link>
+    <app-code-block [code]="problem.code"></app-code-block>
+  </ng-container>
+</div>

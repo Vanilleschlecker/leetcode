@@ -1,0 +1,74 @@
+{
+  "problems": [
+    {
+      "type": "interview",
+      "id": "58-length-of-last-word",
+      "title": "58. length of last word",
+      "finished": true,
+      "complexity": "easy",
+      "code": "lengthOfLastWord(s: string): number {\n    let wordArray = s.split(' ')\n    wordArray = wordArray.filter((element) => element !== ' ' && element !== '')\n    return wordArray[wordArray.length -1].length\n  }",
+      "lastUpdate": "09.10.2023",
+      "link": "https://leetcode.com/problems/length-of-last-word/description/"
+    },
+    {
+      "type": "interview",
+      "id": "14-longest-common-prefix",
+      "title": "14 longest common prefix",
+      "finished": true,
+      "complexity": "easy",
+      "code": "longestCommonPrefix(strs: string[]): string {\n    let prefix = ''\n    let checkStringArray = strs[0].split('')\n    let differenceFound = false\n    let i = 0\n    while(!differenceFound && i < checkStringArray.length) {\n      strs.forEach((element) => {\n        if(element.split('')[i] != checkStringArray[i]) {\n          differenceFound = true\n        }\n      })\n      if(differenceFound) {\n        break\n      } else {\n        prefix += checkStringArray[i]\n        i++\n      }\n    }\n    return prefix\n  }",
+      "lastUpdate": "10.10.2023",
+      "link": "https://leetcode.com/problems/longest-common-prefix/description/"
+    },
+    {
+      "type": "interview",
+      "id": "121-best-time-to-buy-and-sell-stocks",
+      "title": "121 best time to buy and sell stocks",
+      "finished": true,
+      "complexity": "easy",
+      "code": "maxProfit(prices: number[]): number {\n    let buyIndex = 0\n    let sellIndex = 1\n    let maxProfit = 0\n    let i = 1\n\n    if(prices.length > 1) {\n      maxProfit = prices[sellIndex]-prices[buyIndex]\n      while (i < prices.length-1) {\n        i++\n        if(prices[i - 1] < prices[buyIndex]) {\n          buyIndex = i - 1\n        }\n\n        if(prices[i] - prices[buyIndex] > maxProfit) {\n          sellIndex = i\n        }\n\n        if(sellIndex>buyIndex) {\n          maxProfit = prices[sellIndex]-prices[buyIndex]\n        }\n      }\n    }\n\n    if(maxProfit < 0) {\n      return 0\n    } else {\n      return maxProfit\n    }\n  }",
+      "lastUpdate": "10.10.2023",
+      "link": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/"
+    },
+    {
+      "type": "interview",
+      "id": "13-roman-to-integer",
+      "title": "13 roman to integer",
+      "finished": true,
+      "complexity": "easy",
+      "code": "romanToInt(s: string): number {\n    let ret = 0\n\n    let romanNumbers = new Map<string, number> ([\n      ['I',1],\n      ['V',5],\n      ['X',10],\n      ['L',50],\n      ['C',100],\n      ['D',500],\n      ['M',1000],\n\n      ['IV',4],\n      ['IX',9],\n      ['XL',40],\n      ['XC',90],\n      ['CD',400],\n      ['CM',900],\n    ])\n\n    let sArray = s.split('')\n    let i = 0\n\n    while(i < sArray.length) {\n      if(romanNumbers.get(sArray[i]+sArray[i+1])) {\n        ret += romanNumbers.get(sArray[i]+sArray[i+1]) ?? 0\n        i+=2\n      } else {\n        ret += romanNumbers.get(sArray[i]) ?? 0\n        i++\n      }\n    }\n    return ret\n  }",
+      "lastUpdate": "11.10.2023",
+      "link": "https://leetcode.com/problems/roman-to-integer/description/"
+    },
+    {
+      "type": "interview",
+      "id": "383-ransom-note",
+      "title": "383 ransom note",
+      "finished": true,
+      "complexity": "easy",
+      "code": "canConstruct(ransomNote: string, magazine: string): boolean {\n    let magazineArr = magazine.split('')\n    let ransomNoteArr = ransomNote.split('')\n\n    let i = ransomNoteArr.length - 1\n\n    if (magazineArr.length >= ransomNoteArr.length) {\n      while(i >= 0) {\n        if (magazineArr.findIndex((magazineChar) => {\n          return magazineChar == ransomNoteArr[i]\n        }) > -1) {\n          magazineArr.splice(magazineArr.findIndex((magazineChar) => {\n            return magazineChar == ransomNoteArr[i]\n          }),1)\n        } else {\n          return false\n        }\n        i--\n      }\n    } else {\n      return false\n    }\n\n    return true\n  }",
+      "lastUpdate": "13.10.2023",
+      "link": "https://leetcode.com/problems/ransom-note/description/"
+    },
+    {
+      "type": "daily",
+      "id": "2009-minimum-operations-to-make-array-continuous",
+      "title": "2009. minimum operations to make array continuous",
+      "finished": false,
+      "complexity": "hard",
+      "code": "minOperations(nums: number[]): number {\n    let operationsCount = 0\n    let sorted = nums.sort(function(a, b) {\n      return a - b;\n    })\n    let smallest = sorted[0]\n    let biggest = sorted[sorted.length - 1]\n\n    let checkSmallest = smallest\n    let checkBiggest = smallest + sorted.length - 1\n\n    let amountBetween = 0\n    let smallestSaved = smallest\n    let biggestSaved = biggest\n\n    while (checkBiggest < biggest) {\n      if (sorted.filter(function(item) {\n        return (item >= checkSmallest && item <= checkBiggest)\n      }).length > amountBetween) {\n        amountBetween = sorted.filter(function(item) {\n          return (item >= checkSmallest && item <= checkBiggest)\n        }).length\n        smallestSaved = checkSmallest\n        biggestSaved = checkBiggest\n      }\n      checkSmallest++\n      checkBiggest++\n    }\n\n    checkSmallest = smallestSaved\n    checkBiggest = biggestSaved\n\n    while (checkSmallest <= checkBiggest) {\n      if(sorted.filter((v) => (v === checkSmallest)).length === 1) {\n        checkSmallest++\n      } else if (sorted.filter((v) => (v === checkSmallest)).length === 0) {\n        if(sorted.filter(function(item) {\n          return (item < smallestSaved)\n        }).length > 0) {\n          let i = 0\n          while(i < sorted.length) {\n            if (sorted[i] < smallestSaved) {\n              sorted[i] = checkSmallest\n              operationsCount++\n              break\n            }\n            i++\n          }\n        } else if(sorted.filter(function(item) {\n          return (item > biggestSaved)\n        }).length > 0) {\n          let i = 0\n          while(i < sorted.length) {\n            if (sorted[i] > biggestSaved) {\n              sorted[i] = checkSmallest\n              operationsCount++\n              break\n            }\n            i++\n          }\n        } else {\n          let i = 0\n          let found = false\n          while (!found && checkSmallest + i <= checkBiggest) {\n            i++\n            if(sorted.filter(function(item) {\n              return (item == checkSmallest + i)\n            }).length > 1) {\n              let i2 = 0\n              while(i2 < sorted.length) {\n                if (sorted[i2] == checkSmallest + i) {\n                  sorted[i2] = checkSmallest\n                  found = true\n                  operationsCount++\n                  break\n                }\n                i2++\n              }\n            }\n          }\n        }\n        checkSmallest++\n      } else {\n        while(sorted.filter((v) => (v === checkSmallest)).length > 1) {\n          let i = 0\n          while(i < sorted.length) {\n            if (sorted[i] == checkSmallest) {\n              sorted[i] = smallestSaved-1\n              break\n            }\n            i++\n          }\n        }\n      }\n\n      if(checkSmallest > checkBiggest && (sorted.filter(function(item) {\n        return (item < smallestSaved)\n      }).length > 0 || sorted.filter(function(item) {\n        return (item > biggestSaved)\n      }).length > 0)) {\n        checkSmallest = smallestSaved\n      }\n    }\n    return operationsCount",
+      "lastUpdate": "11.10.2023",
+      "link": "https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous/description/"
+    },
+    {
+      "type": "daily",
+      "id": "119-pascals-triangle",
+      "title": "119. Pascal's Triangle",
+      "finished": true,
+      "complexity": "easy",
+      "code": "getRow(rowIndex: number): number[] {\n    let retList: number[] = []\n    let entry = 1;\n    retList.push(entry);\n    for(let i=1; i <= rowIndex; i++){\n      entry=(entry*(rowIndex+1-i))/i;\n\n      retList.push(entry);\n    }\n\n    return retList;\n  }",
+      "lastUpdate": "16.10.2023",
+      "link": "https://leetcode.com/problems/pascals-triangle-ii/description/"
+    }
+  ]
+}

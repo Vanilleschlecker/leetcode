@@ -1,40 +1,27 @@
 <div class="home">
   <h1>Leetcode Problems</h1>
-  <mat-grid-list cols="4">
-    <mat-grid-tile>
-      <mat-card (click)="this.navigationService.navigateTo(routePath.INTERVIEW_QUESTIONS)">
-        <mat-card-content>
-          <h2>150 Interview Questions</h2>
-          <div class="mat-card-icon">
-            <mat-icon>mic</mat-icon>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-card (click)="this.navigationService.navigateTo(routePath.DAILY_QUESTIONS)">
-        <mat-card-content>
-          <h2>Daily Questions</h2>
-          <div class="mat-card-icon">
-            <mat-icon>calendar_today</mat-icon>
-          </div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-card>
-        <mat-card-content>
-          <h2>TO BE DONE</h2>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-    <mat-grid-tile>
-      <mat-card>
-        <mat-card-content>
-          <h2>TO BE DONE</h2>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <app-leetcode-link linkTitle="My Leetcode Profile" link="https://leetcode.com/vioalex/"></app-leetcode-link>
+
+  <ng-container *ngIf="leetCodeDataService.filterItemsOfType('interview').length > 0">
+    <h2>150 Interview Questions</h2>
+    <div class="card-wrapper">
+      <div class="card" *ngFor="let interview of leetCodeDataService.filterItemsOfType('interview')" (click)="this.navigationService.goToProblem(interview.id)">
+        <h3>{{interview.title}} {{interview.finished ? '' : '(unfinished)'}}</h3>
+        <p class="complexity" [class]="'complexity-' + interview.complexity">{{interview.complexity}}</p>
+        <p>{{interview.lastUpdate}}</p>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="leetCodeDataService.filterItemsOfType('daily').length > 0">
+    <h2>Daily Questions</h2>
+    <div class="card-wrapper">
+      <div class="card" *ngFor="let daily of leetCodeDataService.filterItemsOfType('daily')" (click)="this.navigationService.goToProblem(daily.id)">
+        <h3>{{daily.title}} {{daily.finished ? '' : '(unfinished)'}}</h3>
+        <p class="complexity" [class]="'complexity-' + daily.complexity">{{daily.complexity}}</p>
+        <p>{{daily.lastUpdate}}</p>
+      </div>
+    </div>
+  </ng-container>
   <router-outlet></router-outlet>
 </div>

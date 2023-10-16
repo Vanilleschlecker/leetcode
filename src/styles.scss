@@ -120,5 +120,16 @@ h1 {
   padding-top: 2rem;
 }
 
-@import "styles/mat-card";
+h2 {
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+  padding-top: 2rem;
+}
+
+h3 {
+  text-align: center;
+}
+
+@import 'styles/mat-card';
 @import 'node_modules/highlight.js/styles/shades-of-purple.css';

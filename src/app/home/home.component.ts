@@ -1,6 +1,6 @@
-import {Component, inject} from '@angular/core';
-import {NavigationServiceService} from '../common/navigation-service.service';
-import {routePath} from '../common/route-path';
+import {Component, inject} from '@angular/core'
+import {NavigationServiceService} from '../common/navigation-service.service'
+import {LeetCodeDataService} from '../common/leet-code-data.service'
 
 @Component({
   selector: 'app-home',
@@ -8,6 +8,6 @@ import {routePath} from '../common/route-path';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  protected readonly routePath = routePath;
   navigationService = inject(NavigationServiceService)
+  leetCodeDataService = inject(LeetCodeDataService)
 }
