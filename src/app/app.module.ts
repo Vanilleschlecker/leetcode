@@ -15,7 +15,8 @@ import {
 } from 'ngx-highlightjs'
 import { CodeBlockComponent } from './common/code-block/code-block.component'
 import { ProblemComponent } from './problem/problem.component'
-import { LeetcodeLinkComponent } from './common/leetcode-link/leetcode-link.component'
+import { LeetcodeLinkComponent } from './common/leetcode-link/leetcode-link.component';
+import { PlaygroundComponent } from './playground/playground.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { LeetcodeLinkComponent } from './common/leetcode-link/leetcode-link.comp
     HomeComponent,
     CodeBlockComponent,
     ProblemComponent,
-    LeetcodeLinkComponent
+    LeetcodeLinkComponent,
+    PlaygroundComponent
   ],
   imports: [
     AppRoutingModule,

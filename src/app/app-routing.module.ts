@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router'
 import {HomeComponent} from './home/home.component'
 import {routePath} from './common/route-path'
 import {ProblemComponent} from './problem/problem.component'
+import {PlaygroundComponent} from './playground/playground.component'
 
 
 const routes: Routes = [
@@ -14,6 +15,11 @@ const routes: Routes = [
   {
     path: routePath.PROBLEM + '/:id',
     component: ProblemComponent
+  },
+  {
+    path: routePath.PLAYGROUND,
+    component: PlaygroundComponent,
+    pathMatch: 'full'
   }
 ]
 

@@ -11,4 +11,8 @@ export class NavigationServiceService {
   goToProblem(id: string) {
     this.router.navigate([routePath.PROBLEM, id])
   }
+
+  goToPlayground()  {
+    this.router.navigate([routePath.PLAYGROUND])
+  }
 }

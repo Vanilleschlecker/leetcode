@@ -1,4 +1,5 @@
 export enum routePath {
   HOME = '',
-  PROBLEM = 'problem'
+  PROBLEM = 'problem',
+  PLAYGROUND = 'playground'
 }
