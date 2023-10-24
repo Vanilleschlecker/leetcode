@@ -79,6 +79,16 @@
       "code": "backspaceCompare(s: string, t: string): boolean {\n    let sArray = s.split('')\n    let tArray = t.split('')\n\n\n    while(sArray.indexOf('#') > -1) {\n      if (sArray.indexOf('#') > 0) {\n        sArray.splice(sArray.indexOf('#') - 1, 1)\n      }\n      sArray.splice(sArray.indexOf('#'), 1)\n    }\n\n    while(tArray.indexOf('#') > -1) {\n      if (tArray.indexOf('#') > 0) {\n        tArray.splice(tArray.indexOf('#') - 1, 1)\n      }\n      tArray.splice(tArray.indexOf('#'), 1)\n    }\n\n    return sArray.join(',') === tArray.join(',')\n  }",
       "lastUpdate": "19.10.2023",
       "link": "https://leetcode.com/problems/backspace-string-compare/description/"
+    },
+    {
+      "type": "daily",
+      "id": "342-power-of-four",
+      "title": "342. Power of Four",
+      "finished": true,
+      "complexity": "easy",
+      "code": "isPowerOfFour(n: number): boolean {\n    return (Math.log(n)/Math.log(4)) % 1 === 0\n  }",
+      "lastUpdate": "25.10.2023",
+      "link": "https://leetcode.com/problems/power-of-four/description/"
     }
   ]
 }
