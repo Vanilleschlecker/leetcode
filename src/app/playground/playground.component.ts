@@ -8,10 +8,10 @@ import {Component} from '@angular/core'
 export class PlaygroundComponent {
 
   constructor() {
-    this.isPowerOfFour(16)
+    this.kthGrammar(30, 434991989)
   }
 
-  isPowerOfFour(n: number): boolean {
-    return (Math.log(n)/Math.log(4)) % 1 === 0
+  kthGrammar(n: number, k: number): number {
+    return (n == 1) ? 0 : (n == 2) ? (k == 1) ? 0 : 1 : (this.kthGrammar(n-1 , (k % 2 == 0) ? k/2 : (k+1)/2) == 0) ? (k % 2 == 0) ? 1 : 0 : (k % 2 == 0) ? 0 : 1
   }
 }

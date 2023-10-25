@@ -89,6 +89,16 @@
       "code": "isPowerOfFour(n: number): boolean {\n    return (Math.log(n)/Math.log(4)) % 1 === 0\n  }",
       "lastUpdate": "25.10.2023",
       "link": "https://leetcode.com/problems/power-of-four/description/"
+    },
+    {
+      "type": "daily",
+      "id": "779-k-th-symbol-in-grammar",
+      "title": "779. K-th Symbol in Grammar",
+      "finished": true,
+      "complexity": "medium",
+      "code": "kthGrammar(n: number, k: number): number {\n    return (n == 1) ? 0 : (n == 2) ? (k == 1) ? 0 : 1 : (this.kthGrammar(n-1 , (k % 2 == 0) ? k/2 : (k+1)/2) == 0) ? (k % 2 == 0) ? 1 : 0 : (k % 2 == 0) ? 0 : 1\n  }",
+      "lastUpdate": "26.10.2023",
+      "link": "https://leetcode.com/problems/k-th-symbol-in-grammar/description/"
     }
   ]
 }
