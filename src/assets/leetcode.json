@@ -99,6 +99,16 @@
       "code": "kthGrammar(n: number, k: number): number {\n    return (n == 1) ? 0 : (n == 2) ? (k == 1) ? 0 : 1 : (this.kthGrammar(n-1 , (k % 2 == 0) ? k/2 : (k+1)/2) == 0) ? (k % 2 == 0) ? 1 : 0 : (k % 2 == 0) ? 0 : 1\n  }",
       "lastUpdate": "26.10.2023",
       "link": "https://leetcode.com/problems/k-th-symbol-in-grammar/description/"
+    },
+    {
+      "type": "daily",
+      "id": "5-longest-palindromic-substring",
+      "title": "5. Longest Palindromic Substring",
+      "finished": true,
+      "complexity": "medium",
+      "code": "longestPalindrome(s: string): string {\n    let sArray = s.split('')\n    let testChar = ''\n    let longest: string[] = []\n    let i = 0\n    let j = 0\n\n    while (i < sArray.length) {\n      if(longest.length > sArray.length / 2) {\n        break\n      }\n      j = i + 1\n      testChar = sArray[i]\n      while (j < sArray.length) {\n        if (testChar[testChar.length - 1] == sArray[j]) {\n          if(sArray.slice(i, j + 1).join('') == sArray.slice(i, j + 1).reverse().join('')) {\n            if (sArray.slice(i, j + 1).length > longest.length) {\n              longest = sArray.slice(i, j + 1)\n            }\n          }\n        }\n        j++\n      }\n      i++\n    }\n\n    if (longest.length > 0) {\n      return longest.join('')\n    } else {\n      if (sArray.length == 0) {\n        return ''\n      } else {\n        return sArray[0]\n      }\n    }\n  }",
+      "lastUpdate": "29.10.2023",
+      "link": "https://leetcode.com/problems/longest-palindromic-substring/description/"
     }
   ]
 }
