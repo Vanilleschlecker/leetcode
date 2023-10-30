@@ -8,4 +8,5 @@ import {Component, Input} from '@angular/core'
 export class LeetcodeLinkComponent {
   @Input() link?: string
   @Input() linkTitle = 'Link'
+  @Input() target = '_blank'
 }

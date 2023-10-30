@@ -25,10 +25,6 @@
   </ng-container>
 
   <h2>Playground</h2>
-  <div class="card-wrapper" (click)="this.navigationService.goToPlayground()">
-    <div class="card">
-      <h3>Playground</h3>
-    </div>
-  </div>
+  <app-leetcode-link linkTitle="Playground" link="/playground" target="_self"></app-leetcode-link>
   <router-outlet></router-outlet>
 </div>
