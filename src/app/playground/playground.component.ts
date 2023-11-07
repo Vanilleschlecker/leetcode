@@ -8,27 +8,24 @@ import {Component} from '@angular/core'
 export class PlaygroundComponent {
 
   constructor() {
-    this.sortByBits([1890,512,256,128,64,32,16,8,4,2,1])
+    this.eliminateMaximum([4,2,8], [2,1,4])
   }
 
-  sortByBits(arr: number[]): number[] {
-    return arr.sort((num1, num2) => {
-      let num1Bits = Number(num1).toString(2).match(new RegExp('1', 'g')) ?? []
-      let num2Bits = Number(num2).toString(2).match(new RegExp('1', 'g')) ?? []
-
-      if (num1Bits.length > num2Bits.length) {
-        return 1
-      } else if (num1Bits.length < num2Bits.length) {
-        return -1
-      } else {
-        if (num1 > num2) {
-          return 1
-        } else if (num1 < num2) {
-          return -1
-        } else {
-          return 0
-        }
-      }
+  eliminateMaximum(dist: number[], speed: number[]): number {
+    let count = 0
+    let ratio: number[] = []
+    dist.forEach((distance, i) => {
+      ratio.push(distance/speed[i])
     })
+
+    ratio.sort((a, b) => a - b)
+
+    while (count < ratio.length) {
+      if (ratio[count] <= count) {
+        break
+      }
+      count++
+    }
+    return count
   }
 }

@@ -119,6 +119,16 @@
       "code": "sortByBits(arr: number[]): number[] {\n    return arr.sort((num1, num2) => {\n      let num1Bits = Number(num1).toString(2).match(new RegExp('1', 'g')) ?? []\n      let num2Bits = Number(num2).toString(2).match(new RegExp('1', 'g')) ?? []\n\n      if (num1Bits.length > num2Bits.length) {\n        return 1\n      } else if (num1Bits.length < num2Bits.length) {\n        return -1\n      } else {\n        if (num1 > num2) {\n          return 1\n        } else if (num1 < num2) {\n          return -1\n        } else {\n          return 0\n        }\n      }\n    })\n  }",
       "lastUpdate": "30.10.2023",
       "link": "https://leetcode.com/problems/sort-integers-by-the-number-of-1-bits/description/"
+    },
+    {
+      "type": "daily",
+      "id": "1921-eliminate-maximum-number-of-monsters",
+      "title": "1921. Eliminate Maximum Number of Monsters",
+      "finished": true,
+      "complexity": "medium",
+      "code": "eliminateMaximum(dist: number[], speed: number[]): number {\n    let count = 0\n    let ratio: number[] = []\n    dist.forEach((distance, i) => {\n      ratio.push(distance/speed[i])\n    })\n\n    ratio.sort((a, b) => a - b)\n\n    while (count < ratio.length) {\n      if (ratio[count] <= count) {\n        break\n      }\n      count++\n    }\n    return count\n  }",
+      "lastUpdate": "08.11.2023",
+      "link": "https://leetcode.com/problems/eliminate-maximum-number-of-monsters/description/"
     }
   ]
 }
