@@ -8,24 +8,21 @@ import {Component} from '@angular/core'
 export class PlaygroundComponent {
 
   constructor() {
-    this.eliminateMaximum([4,2,8], [2,1,4])
+    this.findSpecialInteger([1])
   }
 
-  eliminateMaximum(dist: number[], speed: number[]): number {
-    let count = 0
-    let ratio: number[] = []
-    dist.forEach((distance, i) => {
-      ratio.push(distance/speed[i])
-    })
+  findSpecialInteger(arr: number[]): number {
+    let arrLength = arr.length
+    let indexDifference = 0
+    let startIndex = 0
+    let foundNumber = arr[startIndex]
 
-    ratio.sort((a, b) => a - b)
-
-    while (count < ratio.length) {
-      if (ratio[count] <= count) {
-        break
-      }
-      count++
+    while (arrLength/4 >= indexDifference + 1) {
+      indexDifference = arr.lastIndexOf(arr[startIndex]) - startIndex
+      foundNumber = arr[startIndex]
+      startIndex = arr.lastIndexOf(arr[startIndex]) + 1
     }
-    return count
+
+    return foundNumber
   }
 }

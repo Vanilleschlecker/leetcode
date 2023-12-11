@@ -129,6 +129,16 @@
       "code": "eliminateMaximum(dist: number[], speed: number[]): number {\n    let count = 0\n    let ratio: number[] = []\n    dist.forEach((distance, i) => {\n      ratio.push(distance/speed[i])\n    })\n\n    ratio.sort((a, b) => a - b)\n\n    while (count < ratio.length) {\n      if (ratio[count] <= count) {\n        break\n      }\n      count++\n    }\n    return count\n  }",
       "lastUpdate": "08.11.2023",
       "link": "https://leetcode.com/problems/eliminate-maximum-number-of-monsters/description/"
+    },
+    {
+      "type": "daily",
+      "id": "1287-element-appearing-more-than-25%-in-sorted-array",
+      "title": "1287. Element Appearing More Than 25% In Sorted Array",
+      "finished": true,
+      "complexity": "easy",
+      "code": "findSpecialInteger(arr: number[]): number {\n    let arrLength = arr.length\n    let indexDifference = 0\n    let startIndex = 0\n    let foundNumber = 0\n\n    foundNumber = arr[startIndex]\n    while (arrLength/4 >= indexDifference + 1) {\n      indexDifference = arr.lastIndexOf(arr[startIndex]) - startIndex\n      foundNumber = arr[startIndex]\n      startIndex = arr.lastIndexOf(arr[startIndex]) + 1\n    }\n\n    return foundNumber\n  }",
+      "lastUpdate": "11.12.2023",
+      "link": "https://leetcode.com/problems/element-appearing-more-than-25-in-sorted-array/description/"
     }
   ]
 }
