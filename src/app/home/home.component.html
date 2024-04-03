@@ -14,7 +14,7 @@
   </ng-container>
 
   <ng-container *ngIf="leetCodeDataService.filterItemsOfType('daily').length > 0">
-    <h2>Daily Questions Test</h2>
+    <h2>Daily Questions</h2>
     <div class="card-wrapper">
       <div class="card" *ngFor="let daily of leetCodeDataService.filterItemsOfType('daily')" (click)="this.navigationService.goToProblem(daily.id)">
         <h3>{{daily.title}} {{daily.finished ? '' : '(unfinished)'}}</h3>
